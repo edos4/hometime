@@ -1,5 +1,7 @@
-RSpec.describe 'Reservations', type: :request do
-  describe 'POST /reservations' do
+require "rails_helper"
+
+RSpec.describe('Reservations', type: :request) do
+  describe 'POST /api/v1/reservations' do
     let(:payload1) do
       {
         "reservation_code": 'YYY12345678',
@@ -74,22 +76,22 @@ RSpec.describe 'Reservations', type: :request do
     end
 
     context 'when posting Payload 1' do
-      before { post '/reservations', params: payload1 }
       it 'returns status code 200' do
+        post '/api/v1/reservations', params: payload1
         expect(response).to have_http_status(200)
       end
     end
 
     context 'when posting Payload 2' do
-      before { post '/reservations', params: payload2 }
       it 'returns status code 200' do
+        post '/api/v1/reservations', params: payload2
         expect(response).to have_http_status(200)
       end
     end
 
     context 'when an invalid request or parameters are lacking' do
       it 'returns a failure message' do
-        expect { post '/reservations', params: invalid_payload1 }.to raise_error('Invalid Payload')
+        expect { post '/api/v1/reservations', params: invalid_payload1 }.to raise_error('Invalid Payload')
       end
     end
   end
