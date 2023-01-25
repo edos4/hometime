@@ -1,10 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Reservation, type: :model do
-  before do
-    @reservation = build(:reservation)
-  end
-  
   it 'has unique code' do
     reservation1 = create(:reservation, guest: create(:guest, email: 'qwe@g.co'))
     reservation2 = build(:reservation, guest: create(:guest, email: 'rty@g.co'))
