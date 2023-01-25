@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Reservation, type: :model do
@@ -5,7 +7,7 @@ RSpec.describe Reservation, type: :model do
     reservation1 = create(:reservation, guest: create(:guest, email: 'qwe@g.co'))
     reservation2 = build(:reservation, guest: create(:guest, email: 'rty@g.co'))
 
-    expect {reservation2.save!}.to raise_error(ActiveRecord::RecordInvalid)
+    expect { reservation2.save! }.to raise_error(ActiveRecord::RecordInvalid)
   end
 
   it 'belongs to guest' do

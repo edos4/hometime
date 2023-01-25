@@ -1,4 +1,6 @@
-class PayloadSegregator< ApplicationService
+# frozen_string_literal: true
+
+class PayloadSegregator < ApplicationService
   def initialize(params)
     @params = params
   end
@@ -10,7 +12,7 @@ class PayloadSegregator< ApplicationService
     when Payloads::Two.keys.sort
       guest_reservation = Payloads::Two.create_reservation(@params)
     else
-      raise "Invalid Payload"
+      raise 'Invalid Payload'
     end
     guest_reservation.reservations.last
   end

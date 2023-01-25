@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Guest, type: :model do
@@ -5,7 +7,7 @@ RSpec.describe Guest, type: :model do
     guest1 = create(:guest)
     guest2 = build(:guest)
 
-    expect {guest2.save!}.to raise_error(ActiveRecord::RecordInvalid)
+    expect { guest2.save! }.to raise_error(ActiveRecord::RecordInvalid)
   end
 
   it 'has many reservations' do

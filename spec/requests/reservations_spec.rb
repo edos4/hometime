@@ -1,4 +1,6 @@
-require "rails_helper"
+# frozen_string_literal: true
+
+require 'rails_helper'
 
 RSpec.describe('Reservations', type: :request) do
   describe 'POST /api/v1/reservations' do
