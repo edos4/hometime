@@ -82,6 +82,10 @@ GEM
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     diff-lcs (1.5.0)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.12.0)
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
@@ -122,6 +126,7 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.14.0-x86_64-linux)
       racc (~> 1.4)
+    pg (1.4.5)
     puma (5.6.5)
       nio4r (~> 2.0)
     racc (1.6.2)
@@ -174,7 +179,6 @@ GEM
       rspec-mocks (~> 3.11)
       rspec-support (~> 3.11)
     rspec-support (3.12.0)
-    sqlite3 (1.6.0-x86_64-linux)
     thor (1.2.1)
     timeout (0.3.1)
     tzinfo (2.0.5)
@@ -191,12 +195,13 @@ DEPENDENCIES
   bootsnap
   database_cleaner
   debug
+  dotenv-rails
   factory_bot_rails
   faker
+  pg
   puma (~> 5.0)
   rails (~> 7.0.4)
   rspec-rails
-  sqlite3 (~> 1.4)
   tzinfo-data
 
 RUBY VERSION
